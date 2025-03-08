@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { FlatList, Platform, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { windowWidth } from "../util/util";
 import { useDispatch } from "react-redux";
 import { getForecast, getWeather } from "../reducer/ThunkAction";
@@ -26,7 +26,7 @@ export default function RenderCities({ cities,setCities }) {
 }
 const styles = StyleSheet.create({
     container: {
-        marginTop: 80, position: 'absolute',
+        marginTop: Platform.OS === "android" ? 80 : 130, position: 'absolute',
         width: windowWidth - 24, marginLeft: 12,
     },
     forecastCard: {
