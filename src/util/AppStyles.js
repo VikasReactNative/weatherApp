@@ -1,6 +1,6 @@
 import { colors } from "./Colors"
 
-export const safeAreaStyle={ flex: 1, backgroundColor: colors.themOrange }
+export const safeAreaStyle={ flex: 1, backgroundColor: `rgba(42, 0, 194, 0.74)` }
 export const imgHW = (h) => {
     return {
         height: h,
