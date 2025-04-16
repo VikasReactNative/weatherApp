@@ -14,10 +14,11 @@ export const getWeather = (city) => {
       });
   };
 };
-export const getForecast = (city) => {
+export const getForecast = (city,count1) => {
   const {count}=store.getState().AuthReducer;
+  log(count1,count);
   return dispatch => {
-    getRequest('/forecast.json', `&q=${city.name}&days=${count}`)
+    getRequest('/forecast.json', `&q=${city.name}&days=${count1??count}`)
       .then(response => {
         if (response) {
           dispatch({ type: 'FORECAST', payload: response?.forecast?.forecastday??[] });

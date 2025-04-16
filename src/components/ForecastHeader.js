@@ -8,7 +8,7 @@ export default function ForecastHeader({ item }) {
     function add() {
         if (count < 15) {
             dispatch({ type: 'COUNT', payload: count + 1 })
-            dispatch(getForecast(currentCity));
+            dispatch(getForecast(currentCity,count+1));
         } else {
             alert('You can add only 15 days')
         }
